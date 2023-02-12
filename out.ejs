@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/out.css">
+  <script src="https://kit.fontawesome.com/bfbbbf4758.js" crossorigin="anonymous"></script>
+</head>
+<!-- lets say the output that we will get is data -->
+<body>
+<% for(var i = 0; i<data.length ; i++){ %>
+  <% for(var j = 0; j<data[0].state.length ; j++){ %>
+    <div id="container">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1536323760109-ca8c07450053" alt="Lago di Braies">
+        <div class="card__details">
+          <span class="tag soil">Soil</span>
+          <span class="tag market">Market</span>
+          <div class="name"><%=data[i].name%></div>
+          <div class="send_soil">
+          <p><em>Soil Type : </em><%=data[i].soil%></p>
+          <p><em>Harversting :</em><%=data[i].harvest%></p>
+          <p><em>Rec Ph : </em> <%=data[i].ph%></p>
+          </div>
+          <hr>
+
+          <div class="send_info notvisi">
+            <p><em>State : </em><%=data[i].state[j]%></p>
+            <p><em>District : </em><%=data[i].district[j]%></p>
+            <p><em>Market  :</em><%=data[i].market[j]%></p>
+            <p><em>Modal Price : </em> <%=data[i].model[j]%> </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%}%>
+  <% } %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="javascript/out.js"></script>
+  </body>
+</html>
